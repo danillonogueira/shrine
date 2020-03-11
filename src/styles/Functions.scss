@@ -1,0 +1,11 @@
+@import './Palette.scss';
+
+@function color($color-name) {
+  @return map-get($palette, $color-name);
+}
+
+/*
+  function getClipPath(width, height) {
+    return `5px 0, ${width - 5}px 0, ${width}px 5px, ${width}px ${height - 5}px, ${width - 5}px ${height}px, 5px ${height}px, 0 ${height - 5}px, 0 5px`;
+  }
+*/
