@@ -64,7 +64,7 @@
       height: 100%;
       padding: 0 8px;
       position: absolute;
-      border: solid 1px color(divider-color);
+      border: solid 1.4px rgba(68, 44, 46, .3);
       border-radius: 5px;
       outline: none;
       transition: border .2s;
@@ -85,7 +85,7 @@
       transition-property: transform, font-size, color, z-index;
       transition-duration: .2s;
       transition-timing-function: ease-in;
-      color: color(secondary-text);
+      color: rgba(68, 44, 46, .6);
       padding: 0 2px;
       z-index: 1;
       text-transform: capitalize;
