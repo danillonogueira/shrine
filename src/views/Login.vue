@@ -1,12 +1,12 @@
 <template>
   <div class="login">
     <div class="login__controls">
-      <Field>
+      <TextField>
         <template v-slot:content>username</template>
-      </Field>
-      <Field>
+      </TextField>
+      <TextField>
         <template v-slot:content>password</template>
-      </Field>
+      </TextField>
       <div class="login__btns">
         <Button>
           <template v-slot:content>cancel</template>
@@ -21,12 +21,12 @@
 
 <script>
   import Button from './../components/Button';
-  import Field from './../components/Field';
+  import TextField from './../components/TextField';
 
   export default {
     components: {
       Button,
-      Field
+      TextField
     }
   }
 </script>
