@@ -2,10 +2,10 @@
   <div class="input">
     <input 
       class="input__itself" 
-      type="text"
+      :type="type"
       @focus="modify('focus')"
       @blur="modify('blur')"
-      v-model="input" 
+      v-model="input"
     />
     <span 
       class="input__placeholder"
@@ -18,6 +18,12 @@
 
 <script>
   export default {
+    props: {
+      type: {
+        type: String,
+        required: true
+      }
+    },
     data() {
       return {
         focused: false,
@@ -62,7 +68,7 @@
       background: transparent;
       width: 100%;
       height: 100%;
-      padding: 0 8px;
+      padding: 0 10px;
       position: absolute;
       border: solid 1.4px rgba(68, 44, 46, .3);
       border-radius: 5px;
@@ -91,7 +97,7 @@
       text-transform: capitalize;
 
       &--active {
-        transform: translateY(-6px) translateX(6px);
+        transform: translateY(-6px) translateX(10px);
         font-size: 12px;
         color: color(primary-text);
         z-index: 2;

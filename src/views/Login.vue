@@ -7,10 +7,10 @@
       ></Logo>
       <span class="login__title">shrine</span>
       <div class="login__controls">
-        <TextField>
+        <TextField :type="'text'">
           <template v-slot:content>username</template>
         </TextField>
-        <TextField>
+        <TextField :type="'password'">
           <template v-slot:content>password</template>
         </TextField>
         <div class="login__btns">
