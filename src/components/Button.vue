@@ -1,12 +1,25 @@
 <template>
-  <div class="btn">
-    <span class="btn__name">next</span>
+  <div 
+    class="btn"
+    :class="{
+      'btn--backgrounded': kind === 'backgrounded',
+      'btn--large': kind === 'large'
+    }"
+  >
+    <span class="btn__name">
+      <slot name="content"></slot>
+    </span>
   </div>
 </template>
 
 <script>
   export default {
-  
+    props: {
+      kind: {
+        type: String,
+        required: true
+      }
+    }
   }
 </script>
 
@@ -15,13 +28,17 @@
   @import './../styles/Functions.scss';
 
   .btn {
-    background: color(primary-color); 
-    height: 40px;
-    width: 250px; 
+    background: transparent;
+    width: 80px; 
+    height: 50px;
     display: flex;
     justify-content: center;
     align-items: center;
-    clip-path: polygon(5px 0, 245px 0, 250px 5px, 250px 35px, 245px 40px, 5px 40px, 0 35px, 0 5px);
+
+    &--backgrounded {
+      clip-path: clip(80px, 50px, 6px);
+      background: color(primary-color); 
+    }
     
     &__name {
       color: color(text-color);

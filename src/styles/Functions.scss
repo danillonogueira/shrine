@@ -4,6 +4,11 @@
   @return map-get($palette, $color-name);
 }
 
+@function clip($width, $height, $edge) {
+  @return polygon($edge 0, $width - $edge 0, $width $edge, $width $height - $edge, $width - $edge $height, $edge $height, 0 $height - $edge, 0 $edge);
+}
+
+
 /*
   function getClipPath(width, height) {
     return `5px 0, ${width - 5}px 0, ${width}px 5px, ${width}px ${height - 5}px, ${width - 5}px ${height}px, 5px ${height}px, 0 ${height - 5}px, 0 5px`;

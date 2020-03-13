@@ -1,7 +1,21 @@
 <template>
   <div class="login">
-    <Field></Field>
-    <Button></Button>
+    <div class="login__controls">
+      <Field>
+        <template v-slot:content>username</template>
+      </Field>
+      <Field>
+        <template v-slot:content>password</template>
+      </Field>
+      <div class="login__btns">
+        <Button>
+          <template v-slot:content>cancel</template>
+        </Button>
+        <Button :kind="'backgrounded'">
+          <template v-slot:content>next</template>
+        </Button>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -24,6 +38,16 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: column;
+
+    &__controls {
+      display: flex;
+      flex-direction: column;
+    }
+
+    &__btns {
+      display: grid;
+      grid-template-columns: 3fr 1fr;
+      justify-items: flex-end;
+    }
   }
 </style>
