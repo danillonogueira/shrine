@@ -75,7 +75,8 @@
     &__btns {
       margin: 15px 0;
       display: grid;
-      grid-template-columns: 3fr 1fr;
+      grid-template-columns: 3fr 85px;
+      grid-gap: 10px;
       justify-items: flex-end;
       width: 100%;
     }

@@ -27,7 +27,7 @@
   .btn {
     background: transparent;
     width: 85px; 
-    height: 50px;
+    height: 45px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -35,7 +35,7 @@
     cursor: pointer;
 
     &--backgrounded {
-      clip-path: clip(85px, 50px, 6px);
+      clip-path: clip(85px, 45px, 6px);
       background: color(primary-color); 
     }
     
