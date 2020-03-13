@@ -16,8 +16,7 @@
   export default {
     props: {
       kind: {
-        type: String,
-        required: true
+        type: String
       }
     }
   }
@@ -29,23 +28,23 @@
 
   .btn {
     background: transparent;
-    width: 80px; 
+    width: 85px; 
     height: 50px;
     display: flex;
     justify-content: center;
     align-items: center;
+    letter-spacing: 1px;
 
     &--backgrounded {
-      clip-path: clip(80px, 50px, 6px);
+      clip-path: clip(85px, 50px, 6px);
       background: color(primary-color); 
     }
     
     &__name {
-      color: color(text-color);
+      color: color(primary-text);
       font-size: 14px;
       font-weight: bold;
       text-transform: uppercase;
-      font-family: "Rubik";
       user-select: none;
     }
   }

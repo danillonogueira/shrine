@@ -1,11 +1,49 @@
 <template>
   <div class="input">
-    <input class="input__itself" type="text" />
-    <span class="input__placeholder"> 
+    <input 
+      class="input__itself" 
+      type="text"
+      @focus="modify('focus')"
+      @blur="modify('blur')"
+      v-model="input" 
+    />
+    <span 
+      class="input__placeholder"
+      :class="{ 'input__placeholder--active': focused }"
+    > 
       <slot name="content"></slot>
     </span>
   </div>
 </template>
+
+<script>
+  export default {
+    data() {
+      return {
+        focused: false,
+        input: ''
+      }
+    },
+    methods: {
+      modify(event) {
+        const events = {
+          'focus': () => {
+            if (!this.input) {
+              this.focused = true;
+            }
+          },
+          'blur': () => {
+            if (!this.input) {
+              this.focused = false;
+            }
+          }
+        };
+
+        events[event]();
+      }
+    }
+  }
+</script>
 
 <style lang="scss" scoped>
   @import './../styles/Fonts.scss';
@@ -26,13 +64,13 @@
       height: 100%;
       padding: 0 8px;
       position: absolute;
-      border: solid 1px gray;
+      border: solid 1px color(divider-color);
       border-radius: 5px;
       outline: none;
       transition: border .2s;
       z-index: 2;
       font-size: 16px;
-      color: color(text-color);
+      color: color(primary-text);
 
       &:focus {
         border: solid 2px color(text-primary);
@@ -41,14 +79,13 @@
 
     &__placeholder {
       position: absolute;
-      font-family: "Roboto";
       font-size: 16px;
       background: #FFF;
       transform: translateY(20px) translateX(10px);
       transition-property: transform, font-size, color, z-index;
       transition-duration: .2s;
       transition-timing-function: ease-in;
-      color: gray;
+      color: color(secondary-text);
       padding: 0 2px;
       z-index: 1;
       text-transform: capitalize;
@@ -56,7 +93,7 @@
       &--active {
         transform: translateY(-6px) translateX(6px);
         font-size: 12px;
-        color: color(text-primary);
+        color: color(primary-text);
         z-index: 2;
       }
     }
