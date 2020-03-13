@@ -3,13 +3,17 @@
     <input 
       class="input__itself" 
       :type="type"
-      @focus="modify('focus')"
-      @blur="modify('blur')"
+      @focus="focused = true"
+      @blur="focused = false"
       v-model="input"
     />
     <span 
       class="input__placeholder"
-      :class="{ 'input__placeholder--active': focused }"
+      :class="{ 
+        'input__placeholder--overscripted': focused || input,
+        'input__placeholder--dimmed': !focused,
+        'input__placeholder--dark': focused
+      }"
     > 
       <slot name="content"></slot>
     </span>
@@ -26,26 +30,8 @@
     },
     data() {
       return {
-        focused: false,
-        input: ''
-      }
-    },
-    methods: {
-      modify(event) {
-        const events = {
-          'focus': () => {
-            if (!this.input) {
-              this.focused = true;
-            }
-          },
-          'blur': () => {
-            if (!this.input) {
-              this.focused = false;
-            }
-          }
-        };
-
-        events[event]();
+        input: '',
+        focused: false
       }
     }
   }
@@ -74,6 +60,7 @@
       border-radius: 5px;
       outline: none;
       transition: border .2s;
+      transition-timing-function: ease-in;
       z-index: 2;
       font-size: 16px;
       color: color(primary-text);
@@ -91,16 +78,22 @@
       transition-property: transform, font-size, color, z-index;
       transition-duration: .2s;
       transition-timing-function: ease-in;
-      color: rgba(68, 44, 46, .6);
       padding: 0 2px;
       z-index: 1;
       text-transform: capitalize;
 
-      &--active {
+      &--overscripted {
         transform: translateY(-6px) translateX(10px);
         font-size: 12px;
-        color: color(primary-text);
         z-index: 2;
+      }
+
+      &--dark {
+        color: color(primary-text);
+      }
+
+      &--dimmed {
+        color: rgba(68, 44, 46, .6);
       }
     }
   }
