@@ -32,6 +32,7 @@
     justify-content: center;
     align-items: center;
     letter-spacing: 1px;
+    cursor: pointer;
 
     &--backgrounded {
       clip-path: clip(85px, 50px, 6px);
