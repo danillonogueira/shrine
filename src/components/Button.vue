@@ -15,9 +15,7 @@
 <script>
   export default {
     props: {
-      kind: {
-        type: String
-      }
+      kind: { type: String }
     }
   }
 </script>
