@@ -5,7 +5,7 @@
         :dimensions="'40'"
         :color="'#442C2E'"
       ></Logo>
-      <span class="login__title">shrine</span>
+      <Title></Title>
       <div class="login__controls">
         <TextField :type="'text'">
           <template v-slot:content>username</template>
@@ -30,12 +30,14 @@
   import Button from './../components/Button';
   import TextField from './../components/TextField';
   import Logo from './../components/Logo';
+  import Title from './../components/Title';
 
   export default {
     components: {
       Button,
       TextField,
-      Logo
+      Logo,
+      Title
     }
   }
 </script>
@@ -55,15 +57,6 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-    }
-
-    &__title {
-      font-size: 26px;
-      text-transform: uppercase;
-      color: color(primary-text);
-      font-weight: bold;
-      margin: 10px 0;
-      letter-spacing: 1px;
     }
 
     &__controls {
