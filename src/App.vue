@@ -1,21 +1,11 @@
 <template>
   <div class="container" id="app">
-    <!-- <Login></Login> -->
-    <Home></Home>
+    <router-view></router-view>
   </div>
 </template>
 
 <script>
-  // import Login from './views/Login';
-  import Home from './views/Home';
-
-  export default {
-    name: 'App',
-    components: {
-      // Login,
-      Home
-    }
-  }
+  export default { name: 'App' }
 </script>
 
 <style lang="scss">
