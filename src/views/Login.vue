@@ -17,7 +17,7 @@
           <Button>
             <template v-slot:content>cancel</template>
           </Button>
-          <Button :kind="'backgrounded'">
+          <Button :special="'backgrounded'">
             <template v-slot:content>next</template>
           </Button>
         </div>

@@ -2,8 +2,8 @@
   <div 
     class="btn"
     :class="{
-      'btn--backgrounded': kind === 'backgrounded',
-      'btn--large': kind === 'large'
+      'btn--backgrounded': special === 'backgrounded',
+      'btn--large': special === 'large'
     }"
   >
     <span class="btn__name">
@@ -15,7 +15,7 @@
 <script>
   export default {
     props: {
-      kind: { type: String }
+      special: { type: String }
     }
   }
 </script>
