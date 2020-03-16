@@ -46,7 +46,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: space-around;
-    box-shadow: inset -15px 0 15px rgba(68, 44, 46, .1);
+    box-shadow: inset -15px 0 20px rgba(68, 44, 46, .2);
 
     &__logo {
       display: flex;
