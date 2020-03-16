@@ -1,5 +1,3 @@
-// import { shallowMount } from '@vue/test-utils'
-// import HelloWorld from '@/components/HelloWorld.vue'
 import { mount } from '@vue/test-utils';
 import Login from '@/views/Login.vue';
 import Button from '@/components/Button.vue';
